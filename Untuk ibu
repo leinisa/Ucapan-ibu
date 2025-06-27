@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Untuk Ibu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fef6f8, #fff);
+      font-family: 'Georgia', serif;
+      color: #4b2e2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 700px;
+      padding: 30px;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .slide {
+      display: none;
+      font-size: 1.6em;
+      line-height: 1.8em;
+      padding: 20px;
+      opacity: 0;
+      animation: fadeSlide 2s forwards;
+    }
+
+    .active {
+      display: block;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 1em;
+      color: #a06c6c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="slide active">Untuk ibu yang selalu bangun paling pagi...</div>
+    <div class="slide">...dan tidur paling akhir, setelah semua tertata rapi.</div>
+    <div class="slide">Untuk ibu yang jarang mengeluh, meski lelah tak pernah habis.</div>
+    <div class="slide">Untuk ibu yang menyimpan air mata di balik senyuman.</div>
+    <div class="slide">Terima kasih sudah jadi rumah paling hangat.</div>
+    <div class="slide">Kau tak pernah minta apa-apa... tapi memberiku segalanya.</div>
+    <div class="slide">Untukmu, Ibu... terima kasih. Selalu.</div>
+    <div class="footer">Didedikasikan untuk semua ibu hebat di dunia ini 🌸</div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }, 4000);
+  </script>
+</body>
+</html>
